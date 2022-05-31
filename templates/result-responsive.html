@@ -5,21 +5,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Classifier</title>
-  <meta name="description" content="A simple HTML5 Template for new projects.">
-  <meta name="author" content="SitePoint">
+  <title>Image Result</title>
+  <meta name="description" content="A simple web app to identify popular running shoes from their images.">
+  <meta name="author" content="Joe Kagumba">
 
-  <meta property="og:title" content="A Basic HTML5 Template">
+  <meta property="og:title" content="Shoe Image Classifier">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
-  <meta property="og:description" content="A simple HTML5 Template for new projects.">
-  <meta property="og:image" content="image.png">
+  <meta property="og:description" content="A simple web app to identify popular running shoes from their images.">
+  <meta property="og:image" content="{{ url_for('static',filename='media/shoe-display.png') }}">
 
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/classifier-responsive.css') }}">
+  <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/index.css') }}">
 
 </head>
 

@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Shoe Image Classifier</title>
+  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <meta name="author" content="SitePoint">
+
+  <meta property="og:title" content="A Basic HTML5 Template">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="A simple HTML5 Template for new projects.">
+  <meta property="og:image" content="image.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/index.css') }}">
+
+</head>
+
+<body>
+  
+	<section class="showcase">
+        <div class="video-container">
+            <video src="{{ url_for('static',filename='media/shoe_vid_01.mp4') }}" autoplay muted loop></video>
+        </div>
+        <div class="content">
+            <h1>Running Shoe Image Classifier</h1>
+
+            <form action="/classifier" method="POST">
+                <button type="submit" class="btn"><b>Begin Classifying</b></button>
+            </form>
+
+            <h3>Or</h3>
+            <h3>Scroll down for more info</h3>
+
+        </div>
+    </section>
+
+    <section id="about">
+        <h1>About</h1>
+        <p>
+            This web app uses a deep convolutional neural network to classify shoes from 14 popular running shoe brands. It predicts 
+            the top three likely brands represented in the image. The model is trained on ~10k total images gathered online from publicly 
+            available data and achieves 91% accuracy on the validation set. Future versions of the model aim to gather more images taken
+            from phones and at obscure angles to improve the robustness of the model.
+        </p>       
+    </section>
+
+   
+
+    <footer><p>&copy; 2022 Kagumba Corp</p></footer>
+    
+    <script src="{{ url_for('static',filename='js/index.js') }}"></script>
+</body>
+</html>

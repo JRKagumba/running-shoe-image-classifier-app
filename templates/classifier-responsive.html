@@ -1,0 +1,224 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Classifier</title>
+  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <meta name="author" content="SitePoint">
+
+  <meta property="og:title" content="A Basic HTML5 Template">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="A simple HTML5 Template for new projects.">
+  <meta property="og:image" content="image.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/classifier-responsive.css') }}">
+
+</head>
+
+<body>
+
+  <div class='container'>
+    <div class='row-1'>
+      <div class='column-1'>
+        <div class='text'>
+          <div class='title'>How to use the app:</div>
+          <p>
+              1. Take an picture of a running shoe.
+              <br>
+              <br>
+              2. Upload the image file and verify it is the correct one.
+              <br>
+              <br>
+              3. Click on the 'Analyze' button and wait while the model configures a result.
+              <br>
+              <br>
+              4. Checkout the running shoe brands below by following a link to their retail websites.            
+              <br>
+          </p>
+
+          <div class="shoe-rack-image" >
+            <img src="{{ url_for('static',filename='media/shoe-display.png') }}" alt="Shoe Display Image" style="width:400px;height:266px;border:0;">
+          </div>
+  
+          <p>
+            Made by Joe Kagumba
+            <a href="https://www.joekagumba.com/">
+              <img src="{{ url_for('static',filename='media/website.png') }}" alt="Website" style="width:25px;height:25px;border:0;vertical-align:middle;">
+            </a>
+              
+          </p>
+        </div>
+      </div>
+      <div class='column-2'>
+        <div class='center'>
+            
+
+          <form action="/analyze" class="image-form" id="image-form" method="POST" enctype=multipart/form-data >
+
+            <div class='no-display'>
+              <input id='file-input'
+                    class='no-display'
+                    type='file'
+                    name='file'
+                    accept='image/*'
+                    onchange='showPicked(this)'>
+            </div>
+
+            <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
+
+            <div class='dashed-upload-label' id='dashed-box'>
+              <label id='dashed-upload-label'>No image chosen</label>
+            </div>
+
+            <div class='not-dashed-upload-label' id='no-dashed-box' style="display:none">
+              <label id='upload-label'>No image chosen</label>
+            </div>
+            
+
+            <div class='image-picked'>
+              <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
+            </div>
+
+
+            <div class='analyze'>
+              <button id='analyze-button' class='analyze-button' type='submit' onclick='analyze()' form="image-form">Analyze</button>
+            </div>
+
+            <div id="loading-image" style="display:none;">
+              <img src="{{ url_for('static',filename='images/stickman-running.gif') }}" alt="Running Stickman">
+            </div>
+
+
+
+
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+    
+    <div class='row-divider'>
+      <hr class="rounded">
+    <div>
+
+    <div class='row-2'>
+      <div class='row-2a'>
+        <div class='logo-1a'>
+          <a href="https://www.adidas.ca/en/running">
+            <div class="img">
+            <img src="{{ url_for('static',filename='media/bw/adidas-bw.png') }}" alt="Adidas" style="width:100%">
+            <img src="{{ url_for('static',filename='media/coloured/adidas-colour.png') }}" class="img-colour" alt="Adidas" style="width:100%">
+            </div></a>
+        </div>
+        <div class='logo-1b'>
+          <a href="https://www.altrarunning.com/">
+            <div class="img">
+            <img src="{{ url_for('static',filename='media/bw/altra-bw.png') }}" alt="Altra" style="width:100%">
+            <img src="{{ url_for('static',filename='media/coloured/altra-colour.png') }}" class="img-colour" alt="Altra" style="width:100%">
+            </div></a>
+        </div>
+        <div class='logo-1c'>
+          <a href="https://www.asics.com/ca/en-ca/">
+            <div class="img">
+            <img src="{{ url_for('static',filename='media/bw/asics-bw.png') }}" alt="Asics" style="width:100%">
+            <img src="{{ url_for('static',filename='media/coloured/asics-colour.png') }}" class="img-colour" alt="Asics" style="width:100%">
+            </div></a>
+        </div>
+        <div class='logo-1d'>
+          <a href="https://www.brooksrunning.com/en_us">
+            <div class="img">
+            <img src="{{ url_for('static',filename='media/bw/brooks-bw.png') }}" alt="Brooks" style="width:100%">
+            <img src="{{ url_for('static',filename='media/coloured/brooks-colour.png') }}" class="img-colour" alt="Brooks" style="width:100%">
+            </div></a>
+        </div>
+        <div class='logo-1e'>
+          <a href="https://www.hoka.com/en/us/">
+            <div class="img">
+            <img src="{{ url_for('static',filename='media/bw/hoka-bw.png') }}" alt="Hoka" style="width:100%">
+            <img src="{{ url_for('static',filename='media/coloured/hoka-colour.png') }}" class="img-colour" alt="Hoka" style="width:100%">
+            </div></a>
+        </div>
+        <div class='logo-1f'>
+          <a href="https://www.mizunousa.com/running">
+            <div class="img">
+            <img src="{{ url_for('static',filename='media/bw/mizuno-bw.png') }}" alt="Mizuno" style="width:100%">
+            <img src="{{ url_for('static',filename='media/coloured/mizuno-colour.png') }}" class="img-colour" alt="Mizuno" style="width:100%">
+            </div></a>
+        </div>
+        <div class='logo-1g'>
+          <a href="https://www.newbalance.ca/en_ca/running/">
+            <div class="img">
+            <img src="{{ url_for('static',filename='media/bw/newbalance-bw.png') }}" alt="New Balance" style="width:100%">
+            <img src="{{ url_for('static',filename='media/coloured/newbalance-colour.png') }}" class="img-colour" alt="New Balance" style="width:100%">
+            </div></a>
+        </div>
+      </div>
+      <div class='row-2b'>
+        <div class='logo-2a'>
+          <a href="https://www.nike.com/ca/running">
+            <div class="img">
+            <img src="{{ url_for('static',filename='media/bw/nike-bw.png') }}" alt="Nike" style="width:100%">
+            <img src="{{ url_for('static',filename='media/coloured/nike-colour.png') }}" class="img-colour" alt="Nike" style="width:100%">
+            </div></a>
+        </div>
+        <div class='logo-2b'>
+          <a href="https://www.on-running.com/en-ca/">
+            <div class="img">
+            <img src="{{ url_for('static',filename='media/bw/on-bw.png') }}" alt="On Running" style="width:100%">
+            <img src="{{ url_for('static',filename='media/coloured/on-colour.png') }}" class="img-colour" alt="On Running" style="width:100%">
+            </div></a>
+        </div>
+        <div class='logo-2c'>
+          <a href="https://ca.puma.com/ca/en/men/shoes/running">
+            <div class="img">
+            <img src="{{ url_for('static',filename='media/bw/puma-bw.png') }}" alt="Puma" style="width:100%">
+            <img src="{{ url_for('static',filename='media/coloured/puma-colour.png') }}" class="img-colour" alt="Puma" style="width:100%">
+            </div></a>
+        </div>
+        <div class='logo-2d'>
+          <a href="https://www.reebok.ca/en/running">
+            <div class="img">
+            <img src="{{ url_for('static',filename='media/bw/reebok-bw.png') }}" alt="Reebok" style="width:100%">
+            <img src="{{ url_for('static',filename='media/coloured/reebok-colour.png') }}" class="img-colour" alt="Reebok" style="width:100%">
+            </div></a>
+        </div>
+        <div class='logo-2e'>
+          <a href="https://www.saucony.com/en/home">
+            <div class="img">
+            <img src="{{ url_for('static',filename='media/bw/saucony-bw.png') }}" alt="Saucony" style="width:100%">
+            <img src="{{ url_for('static',filename='media/coloured/saucony-colour.png') }}" class="img-colour" alt="Saucony" style="width:100%">
+            </div></a>
+        </div>
+        <div class='logo-2f'>
+          <a href="https://www.skechers.ca/en/men/shop-by-activity/running/">
+            <div class="img">
+            <img src="{{ url_for('static',filename='media/bw/skechers-bw.png') }}" alt="Skechers" style="width:100%">
+            <img src="{{ url_for('static',filename='media/coloured/skechers-colour.png') }}" class="img-colour" alt="Skechers" style="width:100%">
+            </div></a>
+        </div>
+        <div class='logo-2g'>
+          <a href="https://www.underarmour.com/en-us/?country=US&currency=USD">
+            <div class="img">
+            <img src="{{ url_for('static',filename='media/bw/under_armour-bw.png') }}" alt="Under Armour" style="width:100%">
+            <img src="{{ url_for('static',filename='media/coloured/under_armour-colour.png') }}" class="img-colour" alt="Under Armour" style="width:100%">
+            </div></a>
+        </div>
+      </div>
+    </div>
+      
+    <footer><p>&copy; 2022 Kagumba Corp</p></footer>
+  </div>
+  
+    
+    <script src="{{ url_for('static',filename='js/classifier.js') }}"></script>
+</body>
+</html>

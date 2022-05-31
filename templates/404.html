@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+   <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500|Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+   <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/error.css') }}">
+   <title>404 Error</title>
+   
+</head>
+
+<body class="Error404">
+    <section class="notFound">
+        <div class="img">
+        <img src="{{ url_for('static',filename='media/404_error.gif') }}" alt="Running Shoes">
+        </div>
+        <div class="text">
+        <h1>404 ERROR</h1>
+        <h2>PAGE NOT FOUND</h2>
+        <h3>BACK TO HOME?</h3>
+        <a href="/home" class="yes">YES</a>
+        <a href="#">NO</a>
+        </div>
+    </section>
+</body>
+</html>

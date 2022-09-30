@@ -8,7 +8,7 @@ Check out the web app at: [runningshoe-image-classifier.herokuapp.com/](https://
 
 ## Background and Motivation
 
-As a former shoe retailer, I found that customers often found it difficult to identify particular running shoes based on the the logo and other external features. This was especially true for more niche brands. The current project aims to allow users to either take a photo or upload an image of a running shoe to the web application and have it idenfified.
+As a former shoe retailer, I found that customers often found it difficult to identify particular running shoes based on the logo and other external features. This was especially true for more niche brands. The current project aims to allow users to either take a photo or upload an image of a running shoe to the web application and have it idenfified.
 
 To enhance the functionality, I plan to source independent shoe store retailers and other online resources to identify the particular shoe name and other relevant running shoe features.
 
